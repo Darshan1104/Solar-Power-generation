@@ -43,7 +43,7 @@ FEATURES = [
     "wind-speed",
     "sky-cover",
     "visibility",
-    "humidity(%)",
+    "humidity",
     "average-wind-speed-(period)",
     "average-pressure-(period)"
 ]
@@ -167,7 +167,8 @@ if st.session_state.pred is not None:
         st.info("🌤️ Prediction indicates **moderate power generation** — fair sunlight conditions.")
     else:
         st.success("☀️ Prediction indicates **high power generation** — ideal conditions for solar output!")
-       
+        st.balloons()
+
     # Mini trend line
     st.markdown("##### 📈 Power Comparison Trend")
     trend_values = np.array([pred * 0.8, pred * 0.9, pred])
@@ -177,7 +178,4 @@ if st.session_state.pred is not None:
 # Footer
 # ---------------------------------------------------
 st.markdown("---")
-st.caption("👩‍💻 Built by Darshan • Model: Gradient Boosting • Deployed on Streamlit Cloud 🌐")
-
-
-
+st.caption("👩‍💻 Built by Darshan • Model: Gradient Boosting • Deployedte on Streamlit Cloud 🌐")
