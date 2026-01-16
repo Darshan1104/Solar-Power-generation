@@ -40,12 +40,12 @@ FEATURES = [
     "distance-to-solar-noon",
     "temperature",
     "wind-direction",
-    "wind-speed (mph)",
+    "wind-speed",
     "sky-cover",
     "visibility",
     "humidity(%)",
     "average-wind-speed-(period)",
-    "average-pressure-(INHg)(period)"
+    "average-pressure-(period)"
 ]
 
 # ---------------------------------------------------
@@ -178,5 +178,6 @@ if st.session_state.pred is not None:
 # ---------------------------------------------------
 st.markdown("---")
 st.caption("👩‍💻 Built by Darshan • Model: Gradient Boosting • Deployed on Streamlit Cloud 🌐")
+
 
 
