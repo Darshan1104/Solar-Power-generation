@@ -151,7 +151,7 @@ if st.session_state.pred is not None:
     # Bar chart
     fig, ax = plt.subplots(figsize=(6, 1.8))
     ax.barh(["Predicted Power"], [pred], color=color)
-    ax.set_xlabel("Power (Units)")
+    ax.set_xlabel("Power (Joules)")
     ax.set_xlim(0, max(pred * 1.5, 5000))
     try:
         ax.bar_label(ax.containers[0], fmt='%d', label_type='center', color="black", fontsize=10)
@@ -179,5 +179,6 @@ if st.session_state.pred is not None:
 # ---------------------------------------------------
 st.markdown("---")
 st.caption("👩‍💻 Built by Darshan • Model: Gradient Boosting • Deployedte on Streamlit Cloud 🌐")
+
 
 
