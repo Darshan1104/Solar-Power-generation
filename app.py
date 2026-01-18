@@ -55,14 +55,14 @@ st.sidebar.header("Input Parameters")
 
 def sidebar_inputs():
     vals = {
-        "distance-to-solar-noon": st.sidebar.number_input("distance-to-solar-noon (0–1)", 0.0, 1.0, 0.50, 0.01),
+        "distance-to-solar-noon": st.sidebar.number_input("distance-to-solar-noon(radians) (0–1)", 0.0, 1.0, 0.50, 0.01),
         "temperature": st.sidebar.number_input("temperature (°F)", -50, 150, 70, 1),
         "wind-direction": st.sidebar.number_input("wind-direction (deg)", 0, 360, 90, 1),
         "wind-speed": st.sidebar.number_input("wind-speed (mph)", 0.0, 100.0, 5.0, 0.1),
         "sky-cover": st.sidebar.number_input("sky-cover (0–4 or categorical scale)", 0, 100, 20, 1),
         "visibility": st.sidebar.number_input("visibility (miles)", 0.0, 20.0, 10.0, 0.1),
         "humidity": st.sidebar.number_input("humidity (%)", 0, 100, 50, 1),
-        "average-wind-speed-(period)": st.sidebar.number_input("average-wind-speed-(period)", 0.0, 100.0, 5.0, 0.1),
+        "average-wind-speed-(period)": st.sidebar.number_input("average-wind-speed-(3h)", 0.0, 100.0, 5.0, 0.1),
         "average-pressure-(period)": st.sidebar.number_input("average-pressure-(inHg)", 0.0, 40.0, 29.8, 0.1),
     }
     return vals
@@ -86,7 +86,7 @@ with c1:
         X_scaled = scaler.transform(row)
         pred = float(model.predict(X_scaled)[0])
         st.session_state.pred = pred
-        st.success(f"Estimated Power Generated: **{pred:,.0f}** units")
+        st.success(f"Estimated Power Generated: **{pred:,.0f}** Joules")
 
 with c2:
     if st.button("✨ Reset to Defaults"):
@@ -179,4 +179,5 @@ if st.session_state.pred is not None:
 # ---------------------------------------------------
 st.markdown("---")
 st.caption("👩‍💻 Built by Darshan • Model: Gradient Boosting • Deployedte on Streamlit Cloud 🌐")
+
 
